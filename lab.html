@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Your Page Title</title> 
+    
+    <style>
+table , th,td {
+    border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  border-color: white;
+} 
+
+button{
+    border-color: transparent;
+    border-radius: 5px;
+    background-color: rgb(108, 108, 108);
+    color: white;
+    height: 33px;
+    width: 55px;
+    margin: 3px;
+}
+
+
+div{
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center;
+}
+    </style>
+</head>
+
+<body>
+        <h1 style="text-align: center; color: brown;">To Do Organizer</h1>
+        <div>
+            <input id="task" class="data" style="border-color: transparent;
+            box-shadow: 0 0 6px rgb(175, 175, 175);
+            padding: 5px;
+            width: 600px;">
+            <button id="adds" onclick="addtask()" >Add</button>  
+        </div>
+        <br>
+        <div> 
+            <table id="all" style="width:800px ;"  >
+                <thead style="background-color: rgb(223, 25, 25);color: white;">
+                    <tr>
+                        <th colspan="3">Done</th>
+                        <th colspan="9">Task</th>
+                        <th colspan="3">Delete</th>
+                    </tr>
+                </thead>
+                <tbody  id="list">
+                </tbody>
+            </table>
+        </div>
+        <script src="lab-js"></script>
+    </body>
+
+<!DOCTYPE html>

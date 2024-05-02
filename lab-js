@@ -1,0 +1,58 @@
+var task=document.getElementById("task")
+var checks=document.getElementsByTagName("input")
+var count=0
+
+document.addEventListener("click",()=>
+{
+   Array.from(checks).forEach(element => {
+    if(element.type=="checkbox")
+    {
+ element.parentElement.nextElementSibling.style.textDecoration =  element.checked ?  "line-through"  : "none";      
+  
+    }
+    });
+}
+);
+
+
+function addtask()
+{
+    if(task.value!="")
+    {
+        count++
+        var tr=document.createElement("tr")
+        var td1= document.createElement("td")
+        td1.setAttribute("colspan","3")
+        
+        td1.innerHTML='<input type="checkbox">'
+        tr.appendChild(td1)
+        var td2= document.createElement("td")
+        td2.setAttribute("colspan","9")
+        td2.innerText=`${task.value}`
+        tr.appendChild(td2)
+        var td3=createdeletebtn()
+        tr.appendChild(td3)
+        document.getElementById("list").appendChild(tr)
+        tr.style.backgroundColor= count%2==0 ? "rgb(207, 207, 207)" : "white"
+        task.value=""
+    }
+}
+
+   function createdeletebtn()
+   {
+    var td3= document.createElement("td")
+    var delbtn=document.createElement("button")
+    delbtn.setAttribute("class","bnt")
+    delbtn.setAttribute("class","del")
+    delbtn.style.color="rgb(251, 88, 88)"
+    delbtn.style.backgroundColor="transparent"
+    delbtn.innerHTML='<i class="fas fa-trash"></i>'
+    delbtn.addEventListener("click", function() {
+      delbtn.parentNode.parentNode.remove()
+    });
+    td3.setAttribute("colspan","3")
+    td3.appendChild(delbtn)
+
+    return td3
+   }
+
